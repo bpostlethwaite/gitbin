@@ -1,0 +1,21 @@
+{
+    "bins":[ 
+        {
+            "bin": "path/to/bina",
+            "active": false
+            "binfiles": [
+                "path/to/filea",
+                "path/to/fileb",
+                "path/to/filec"
+            ]
+        },
+        {
+            "bin": "path/to/binb",
+            "active": true
+            "binfiles": [
+                "path/to/filed",
+                "path/to/filee",
+                "path/to/filef"
+            ]
+        }]
+}

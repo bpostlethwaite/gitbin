@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+/*
+ * dotjs - collect dotfiles and configs easily for use with git
+ *
+ * Ben Postlethwaite
+ * MIT License.
+ */
+
+/**
+ * Dispatches the argv to the application.
+ */
+require('../lib/cli').start();
