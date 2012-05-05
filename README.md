@@ -50,9 +50,15 @@ This may or may not be implemented as it has the potential for grief. However, o
 node dot.js pull
 ```
 
+<<<<<<< HEAD
 ### Check status
 This borrows that most handy git feature and lists all bins registered as well as marking the bin currently in use and the files registered to that bin. It ensures that the `.dotlocal.json` is in sync with the actual files in the bin.
 ```bash
 node dot.js status
 ```
+=======
+### Check dot.js status
+This borrows that most handy git feature and lists all bins registered as well as marking the bin currently in use and the files registered to that bin. It ensures that the `.dotlocal.json` is in sync with the actual files in the bin.
+
+>>>>>>> 6dcc86138b19ba3ec5bb1ae7b79aafaab7b99a14
 
