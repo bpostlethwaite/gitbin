@@ -1,0 +1,18 @@
+[
+    {
+        "bin": "shroud",
+        "active": false,
+        "binfiles": [
+            "coora.js",
+            "README.md"
+        ]
+    },
+    {
+        "bin": "megalopolis",
+        "active": true,
+        "binfiles": [
+            "super.c",
+            "gracious.py"
+        ]
+    }
+]
