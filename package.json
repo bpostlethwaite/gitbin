@@ -7,7 +7,9 @@
     "contributors"  : [
       { "name" : "Postlethwaite", "email" : "post.ben.here@gmail.com" }
     ],
-    "dependencies"  : {"async": ">=0.1.18"},
+    "dependencies" : {
+        "ncp"    :   ">=0.2.6"
+    },
     "main"          : "./lib/dotjs",
     "bin"           : { "dotjs": "./bin/dotjs" },
     "directories"   : { "test": "./test", "bin": "./bin", "lib": "./lib" },
