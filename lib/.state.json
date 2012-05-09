@@ -4,7 +4,8 @@
         "active": true,
         "binfiles": [
             "coora.js",
-            "README.md"
+            "README.md",
+            ".emacs"
         ]
     },
     {
