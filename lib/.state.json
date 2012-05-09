@@ -2,18 +2,16 @@
     {
         "bin": "/home/ben/sysfiles/dotfiles",
         "active": true,
-        "binfiles": [
-            "coora.js",
-            "README.md",
-            ".emacs"
-        ]
+        "binfiles": {
+            "/home/ben/.tmux.conf": true
+        }
     },
     {
         "bin": "megalopolis",
         "active": false,
-        "binfiles": [
-            "super.c",
-            "gracious.py"
-        ]
+        "binfiles": {
+            "super.c": true,
+            "gracious.py": true
+        }
     }
 ]
