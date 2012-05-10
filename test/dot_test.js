@@ -16,7 +16,7 @@ var dummyState = [
     },
     {
         "bin": "./testbin_b",
-        "active": true,
+        "active": false,
         "binfiles": {}
     }
 ];
