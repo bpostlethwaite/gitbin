@@ -3,91 +3,120 @@
 //
 
 var statefile = __dirname + '/.teststateA.json'
-, commands = require('../lib/commands').commands();
+, commands = require('../lib/commands').commands()
+, assert = require('assert')
+, fs = require('fs')
+, e = require('./../lib/errf').errf();
 
-var fs = require('fs');
 
 //
 // Dummy Data
 //
-var dummyState = [
+var testbina =  __dirname +"/testbin_a"
+,   testbinb = __dirname +"/testbin_b"
+,   dummyState = [
     {
-        "bin": __dirname +"/testbin_a",
+        "bin": testbina,
         "active": true,
         "binfiles": {}
     },
     {
-        "bin": __dirname +"/testbin_b",
+        "bin": testbinb,
         "active": false,
         "binfiles": {}
     }
 ];
 
-
-var State;
-
 //
-// Need to change directories to
-// simulate realuse scenarios.
-// Dot.js is not run from it's own
-// main directory.
+// Aliases
 //
-
+var pass = true
+,   fail = false;
 
 //
 // ## Tests
 //
 
-describe('COMMAND LOGIC:', function () {
+//
+// ## No command test
+//
+commands.run('','', dummyState, function (err, state) {
+    var msg = testmsg('Prints usage on no command');
+    assert.ok( (err.usage && !state) , msg(fail) ) || print( msg(pass) );
+}); 
+
+//
+// ## Bad command test
+//   
+commands.run('yar!','rm *', dummyState, function (err, state) {
+    var msg = testmsg('Prints usage on bad command');
+    assert.ok( (err.usage && !state) , msg(fail) ) || print( msg(pass) );
+});
+
+//
+// ## <add> command tests
+//
+var testfile = 'test/foo.dum'
+commands.run('add',[testfile], dummyState, function (err, state) {
     
+    var msg = testmsg('<add> command returns no error');
+    (assert.ifError(err) && print( msg(fail) )) || print( msg(pass) );
+
+    var msg = testmsg('<add> command adds file into state');    
+    assert.ok( (state[0].binfiles[process.cwd() + '/' + testfile]), msg(fail) ) || 
+        print( msg(pass) );
     
-    it('must print usage on no command', function (done) {
-        commands.run('','', dummyState, function (err, state) {
-            if (err.usage && !state) {
-                done()
-            } // could use should.throw('message')
-        });
-    });
-    
-    it('must print usage on bad command', function (done) {
-        commands.run('yar!','rm *', dummyState, function (err, state) {
-            if (err.usage && !state) {
-                done()
-            }
-        });
-    });
-    
-    
-    it('must add file and change state', function (done) {
-        commands.run('add',['test/foo.dum'], dummyState, function (err, state) {
+    fs.readdir(testbina, function (err, list) {
+        if (err) throw new Error('Problem reading test directory') 
+
+        var msg = testmsg('<add> command copies file successfully');    
+        assert.ok( (list.indexOf('foo.dum') >= 0 ), msg(fail) ) || print( msg(pass) );
+        
+        cleanup(testbina, function (err) {
             if (err) throw err;
-            else {
-                state[0].binfiles.should.have.property(process.cwd()+'/test/foo.dum');
-                fs.readdir('test/testbin_a', function (err, list) {
-                    if (err) return done(err);
-                    list.should.include('foo.dum');
-                });
-                done()
-            }
         });
     });
+});
+
+
+//
+// Helper functions
+//
+function print (msg) {
+    console.log(msg)
+};
+
+function testmsg (msg) {
+    var that = {}
+    ,   message = e.grey + '    ' + msg + ': ' + e.reset
+    ,   passed = e.green + 'passed' + e.reset
+    ,   failed = e.red + 'failed' + e.reset;
+ 
+    that = function(pass) {
+        if (pass) return message + passed;
+        else return '\r' + message + failed;
+    };
+    
+    return that;
+};
+
 
 //
 // After (Cleanup) -> Remove files from testbin_a
 //
-    after( function (done) {
-        fs.readdir('test/testbin_a', function (err, list) {
-            if (err) return done(err);
-            list.forEach( function (file) {
-                if (file === "foo.dum") {
-                    fs.unlinkSync('test/testbin_a/foo.dum'); 
-                }
-                else if (file === "bar.dum") {
-                    fs.unlinkSync('test/testbin_a/bar.dum');
-                }
-            });
-            done();
+'test/testbin_a'
+function cleanup (dir, cb) {
+    fs.readdir(dir, function (err, list) {
+        if (err) return cb(err);
+        list.forEach( function (file) {
+            if (file === "foo.dum") {
+                fs.unlinkSync('test/testbin_a/foo.dum'); 
+            }
+            else if (file === "bar.dum") {
+                fs.unlinkSync('test/testbin_a/bar.dum');
+            }
         });
+        cb(null);
     });
+};
 
-}); // end describe COMMAND LOGIC

@@ -1,11 +1,6 @@
-TESTS = test/*.js
-REPORTER = spec
+SHELL:= /bin/bash
 
 test:
-	    @./node_modules/.bin/mocha \
-		--require should \
-		--reporter $(REPORTER) \
-		--growl \
-		$(TESTS)
+	@find test/*_test.js | xargs -n 1 -t node
 
-.PHONY: test
+.PHONY: test   

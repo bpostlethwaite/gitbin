@@ -2,12 +2,17 @@
 // ## Test Dependencies ##
 //
 
-var statefile = __dirname + '/.teststateA.json';
-var app = require('../lib/dot').app(statefile);
+"use strict"
+
+var assert = require('assert')
+,   statefile = __dirname + '/.teststateA.json'
+,   app = require('../lib/dot').app(statefile)
+,   e = require('../lib/errf').errf();
 
 //
 // Dummy Data
 //
+var testname;
 var dummyState = [
     {
         "bin": "./testbin_a",
@@ -20,29 +25,61 @@ var dummyState = [
         "binfiles": {}
     }
 ];
+//
+// Aliases
+//
+var pass = true
+,   fail = false;
 
 //
-// ## Tests
+// ## Tests ##
+// note: since test asyncronous order
+// or return may not be order of tests
+// in test file.
 //
 
-describe('APP LOGIC', function () {
-    it('must register initialized file', function () {
-        app.statefile.should.equal(statefile);
-    });
+var msg = testmsg('App registers initialized file');
+assert.strictEqual( app.statefile,statefile, msg(fail) ) || print( msg(pass) );
 
-    it('must read state correctly' , function (done) {
-        app.readstate( function (err, state) {
-            if (err) throw err;
-            else {
-                state.should.be.a('object')
-                state.should.have.length(2)
-                done()
-            }
-        });
-    });
 
-    it('must write state correctly' , function (done) {
-        app.writestate(dummyState, done);
-    });
+app.readstate( function (err, state) {
+    
+    var msg = testmsg('App reads state correctly');
+    (assert.ifError(err) && print( msg(fail) )) ||
+        assert.strictEqual( typeof(state), 'object', msg(fail) ) ||
+        assert.strictEqual( state.length, 2, msg(fail) ) || print( msg(pass) )
+});    
 
-}); // end describe APP LOGIC
+
+app.writestate(dummyState, function (err) {
+
+    var msg = testmsg('App writes state correctly');
+    (assert.ifError(err) && print( msg(fail) )) || print( msg(pass) );
+});
+
+
+//
+// Helper functions
+//
+
+function print (msg) {
+    console.log(msg)
+};
+//
+// Returns a function which will print
+// a message according to pass or fail
+// arguement.
+//
+function testmsg (msg) {
+    var that = {}
+    ,   message = e.grey + '    ' + msg + ': ' + e.reset
+    ,   passed = e.green + 'passed' + e.reset
+    ,   failed = e.red + 'failed' + e.reset;
+ 
+    that = function(pass) {
+        if (pass) return message + passed;
+        else return message + failed;
+    };
+    
+    return that;
+};
