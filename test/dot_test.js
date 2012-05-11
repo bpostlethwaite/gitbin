@@ -25,7 +25,7 @@ var dummyState = [
 // ## Tests
 //
 
-describe('app logic', function () {
+describe('APP LOGIC', function () {
     it('must register initialized file', function () {
         app.statefile.should.equal(statefile);
     });

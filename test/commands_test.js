@@ -12,12 +12,12 @@ var fs = require('fs');
 //
 var dummyState = [
     {
-        "bin": "test/testbin_a",
+        "bin": __dirname +"/testbin_a",
         "active": true,
         "binfiles": {}
     },
     {
-        "bin": "test/testbin_b",
+        "bin": __dirname +"/testbin_b",
         "active": false,
         "binfiles": {}
     }
@@ -41,7 +41,7 @@ describe('COMMAND LOGIC:', function () {
     
     
     it('must print usage on no command', function (done) {
-        commands.go('','', dummyState, function (err, state) {
+        commands.run('','', dummyState, function (err, state) {
             if (err.usage && !state) {
                 done()
             } // could use should.throw('message')
@@ -49,7 +49,7 @@ describe('COMMAND LOGIC:', function () {
     });
     
     it('must print usage on bad command', function (done) {
-        commands.go('yar!','rm *', dummyState, function (err, state) {
+        commands.run('yar!','rm *', dummyState, function (err, state) {
             if (err.usage && !state) {
                 done()
             }
@@ -58,7 +58,7 @@ describe('COMMAND LOGIC:', function () {
     
     
     it('must add file and change state', function (done) {
-        commands.go('add',['test/foo.dum'], dummyState, function (err, state) {
+        commands.run('add',['test/foo.dum'], dummyState, function (err, state) {
             if (err) throw err;
             else {
                 state[0].binfiles.should.have.property(process.cwd()+'/test/foo.dum');
@@ -88,5 +88,5 @@ describe('COMMAND LOGIC:', function () {
             done();
         });
     });
-            
+
 }); // end describe COMMAND LOGIC

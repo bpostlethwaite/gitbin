@@ -7,9 +7,7 @@
     "contributors"  : [
       { "name" : "Postlethwaite", "email" : "post.ben.here@gmail.com" }
     ],
-    "dependencies" : {
-        "ncp"    :   ">=0.2.6"
-    },
+    "dependencies" : {},
     "devDependencies": {
         "mocha": "*" ,
         "should": "*"
