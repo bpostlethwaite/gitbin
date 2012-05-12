@@ -2,7 +2,7 @@
 // ## Test Dependencies ##
 //
 
-var statefile = __dirname + '/.teststateA.json'
+var globalfile = __dirname + '/global.json'
 , commands = require('../lib/commands').commands()
 , assert = require('assert')
 , fs = require('fs')
@@ -13,25 +13,27 @@ var statefile = __dirname + '/.teststateA.json'
 // Dummy Data
 //
 var testbina =  __dirname +"/testbin_a"
-,   testbinb = __dirname +"/testbin_b"
-,   dummyState = [
-    {
-        "bin": testbina,
-        "active": true,
-        "binfiles": {}
-    },
-    {
-        "bin": testbinb,
-        "active": false,
-        "binfiles": {}
-    }
-];
+, testbinb = __dirname +"/testbin_b"
+
+function buildData (bina, binb)  {
+    var that = {};
+    that[bina] = true;
+    that[binb] = false;
+    return that;
+}
+
+var dummyData = buildData(testbina, testbinb);
+fs.writeFile(globalfile, JSON.stringify(dummyData, null, 4), function (err) {
+    if (err) throw err;
+});
 
 //
 // Aliases
 //
 var pass = true
 ,   fail = false;
+
+
 
 //
 // ## Tests
@@ -40,7 +42,7 @@ var pass = true
 //
 // ## No command test
 //
-commands.run('','', dummyState, function (err, state) {
+commands.run('','', globalfile, function (err, state) {
     var msg = testmsg('Prints usage on no command');
     assert.ok( (err.usage && !state) , msg(fail) ) || print( msg(pass) );
 }); 
@@ -48,7 +50,7 @@ commands.run('','', dummyState, function (err, state) {
 //
 // ## Bad command test
 //   
-commands.run('yar!','rm *', dummyState, function (err, state) {
+commands.run('yar!','rm *', globalfile, function (err, state) {
     var msg = testmsg('Prints usage on bad command');
     assert.ok( (err.usage && !state) , msg(fail) ) || print( msg(pass) );
 });
@@ -57,13 +59,16 @@ commands.run('yar!','rm *', dummyState, function (err, state) {
 // ## <add> command tests
 //
 var testfile = 'test/foo.dum'
-commands.run('add',[testfile], dummyState, function (err, state) {
+commands.run('add',[testfile], globalfile, function (err, state) {
     
     var msg = testmsg('<add> command returns no error');
-    (assert.ifError(err) && print( msg(fail) )) || print( msg(pass) );
+    if (err && print( msg(fail)) ) {
+        assert.ifError(err)  
+    }
+    else print( msg(pass) );
 
     var msg = testmsg('<add> command adds file into state');    
-    assert.ok( (state[0].binfiles[process.cwd() + '/' + testfile]), msg(fail) ) || 
+    assert.ok( (state.trackedfiles[process.cwd() + '/' + testfile]), msg(fail) ) || 
         print( msg(pass) );
     
     fs.readdir(testbina, function (err, list) {
