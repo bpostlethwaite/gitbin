@@ -1,4 +1,5 @@
 {
-    "/home/ben/programming/node/dotjs/test/testbin_a": true,
-    "/home/ben/programming/node/dotjs/test/testbin_b": false
+    "/home/ben/programming/node/gitbin/test/testbin_a": true,
+    "/home/ben/programming/node/gitbin/test/testbin_b": false,
+    "/home/ben/programming/node/gitbin/test": true
 }

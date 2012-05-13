@@ -1,0 +1,40 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'test' ]
+info using npm@1.1.21
+info using node@v0.6.17
+verbose config file /home/ben/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/lib/node_modules/npm/npmrc
+verbose caching /home/ben/programming/node/gitbin/package.json
+verbose loadDefaults dotjs@0.0.4
+verbose run-script [ 'pretest', 'test', 'posttest' ]
+info pretest dotjs@0.0.4
+info test dotjs@0.0.4
+verbose unsafe-perm in lifecycle true
+silly exec sh "-c" "make test"
+silly spawning [ 'sh',
+silly spawning   [ '-c', 'make test' ],
+silly spawning   '/home/ben/programming/node/gitbin' ]
+info dotjs@0.0.4 Failed to exec test script
+ERR! dotjs@0.0.4 test: `make test`
+ERR! `sh "-c" "make test"` failed with 2
+ERR! 
+ERR! Failed at the dotjs@0.0.4 test script.
+ERR! This is most likely a problem with the dotjs package,
+ERR! not with npm itself.
+ERR! Tell the author that this fails on your system:
+ERR!     make test
+ERR! You can get their info via:
+ERR!     npm owner ls dotjs
+ERR! There is likely additional logging output above.
+ERR! 
+ERR! System Linux 3.3.5-1-ARCH
+ERR! command "node" "/usr/bin/npm" "test"
+ERR! cwd /home/ben/programming/node/gitbin
+ERR! node -v v0.6.17
+ERR! npm -v 1.1.21
+ERR! code ELIFECYCLE
+ERR! message dotjs@0.0.4 test: `make test`
+ERR! message `sh "-c" "make test"` failed with 2
+ERR! errno {}
+verbose exit [ 1, true ]

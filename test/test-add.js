@@ -2,7 +2,7 @@
 // ## Test Dependencies ##
 //
 
-var globalfile = __dirname + '/global.json'
+var fglobal = __dirname + '/global.json'
   , app = require('../lib/commands')()
   , assert = require('assert')
   , fs = require('fs')
@@ -10,32 +10,26 @@ var globalfile = __dirname + '/global.json'
   , t = testlib() 
 
 // Change this to proper config function
-app.fglobal = globalfile 
+app.fglobal = fglobal 
 
 //
 // Dummy Data
 //
 var testbina =  __dirname +"/testbin_a"
   , testbinb = __dirname +"/testbin_b"
-
+  , flocal = '.trackedfiles.json'
 
 // Write Dummy Global File
 var dummyData = t.buildData(testbina, testbinb) 
-fs.writeFile(globalfile, JSON.stringify(dummyData, null, 4), function (err) {
-  if (err) throw err 
-}) 
+fs.writeFileSync(fglobal, JSON.stringify(dummyData, null, 4))
 // Write Dummy Local File
-fs.writeFile(testbina + '/.trackedfiles.json', "{}", function (err) {
-  if (err) throw err 
-}) 
+fs.writeFileSync(testbina + '/' + flocal, "{}") 
 
 //
 // Aliases
 //
 var pass = true
   , fail = false 
-
-
 
 //
 // ## TESTS ##
@@ -61,7 +55,7 @@ app.run('yar!','rm *', function (err, state) {
 //
 // ## <add> command tests ##
 // Functionality
-var testfiles = ['test/foo.dum','test/bar.dum']
+var testfiles = ['foo.dum','bar.dum']
 app.run('add',testfiles, function (err, state) {        
 
   var msg = t.testmsg('<add> command adds files into state')     
@@ -74,7 +68,7 @@ app.run('add',testfiles, function (err, state) {
     var msg = t.testmsg('<add> command copies file successfully')     
     assert.ok( (list.indexOf('foo.dum') >= 0 ), msg(fail) ) || t.print( msg(pass) ) 
     
-    cleanup(testbina, function (err) {
+    t.cleanup(testbina, testfiles, function (err) {
       if (err) throw err 
     }) 
   }) 
@@ -105,22 +99,4 @@ app.run('add', ['bugs'], function (err, state) {
 })
 
 
-//
-// After (Cleanup) -> Remove files from testbin_a
-//
-var dir = 'test/testbin_a' 
-function cleanup (dir, cb) {
-    fs.readdir(dir, function (err, list) {
-        if (err) return cb(err) 
-        list.forEach( function (file) {
-            if (file === "foo.dum") {
-                fs.unlinkSync('test/testbin_a/foo.dum')  
-            }
-            else if (file === "bar.dum") {
-                fs.unlinkSync('test/testbin_a/bar.dum') 
-            }
-        }) 
-        cb(null) 
-    }) 
-} 
 
