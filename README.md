@@ -2,7 +2,7 @@
 
 gitbin collects scattered dotfiles (or other files) into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality. 
 
-[![Build Status](https://secure.travis-ci.org/Postlethwaite/gitbin.png?branch=master)](http://travis-ci.org/Postlethwaite/gitbin)
+[![Build Status](https://secure.travis-ci.org/Postlethwaite/gitbin.png?branch=test)](http://travis-ci.org/Postlethwaite/gitbin)
 
 
 ## How to Install
