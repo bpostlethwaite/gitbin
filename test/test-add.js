@@ -3,7 +3,7 @@
 //
 
 var fglobal = __dirname + '/global.json'
-  , app = require('../lib/commands')()
+  , app = require('../lib/gitbin')()
   , assert = require('assert')
   , fs = require('fs')
   , testlib = require('./libtest')

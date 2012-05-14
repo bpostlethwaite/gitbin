@@ -1,20 +1,27 @@
 {
-    "name"          : "dotjs",
-    "description"   : "collect dotfiles and configs easily for use with git",
-    "url"           : "https://github.com/Postlethwaite/dotjs",
-    "keywords"      : ["dotfiles", "git", "CLI", "system tools"],
-    "author"        : "Postlethwaite",
-    "contributors"  : [
-      { "name" : "Postlethwaite", "email" : "post.ben.here@gmail.com" }
-    ],
-    "dependencies" : {},
-    "devDependencies": { },
-    "main"          : "./lib/cli.js",
-    "bin"           : { "dotjs": "./bin/dotjs" },
-    "directories"   : { "test": "./test", "bin": "./bin", "lib": "./lib" },
-    "version"       : "0.0.4",
-    "scripts": {
-        "test": "make test"
-    },
-    "engines"       : {"node": ">=0.6.0"}
+  "name"          : "gitbin",
+  "description"   : "bin dotfiles and configs easily for use with git",
+  "url"           : "https://github.com/Postlethwaite/gitbin",
+  "keywords"      : [
+                    ,"dotfiles"
+                    , "git"
+                    , "CLI"
+                    , "system tools"
+                    , "filesystem" 
+                    ],
+  "author"        : "Postlethwaite",
+  "contributors"  : [
+    {  "name" : "Postlethwaite"
+      ,"email" : "post.ben.here@gmail.com" }
+  ],
+  "dependencies" : {},
+  "devDependencies": {},
+  "main"          : "./lib/cli.js",
+  "bin"           : { "gitbin": "./bin/gitbin" },
+  "directories"   : { "test": "./test", "bin": "./bin", "lib": "./lib" },
+  "version"       : "0.0.4",
+  "scripts": {
+    "test": "make test"
+  },
+  "engines"       : {"node": ">=0.6.0"}
 }

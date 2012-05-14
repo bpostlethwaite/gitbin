@@ -3,7 +3,7 @@
 //
 
 var fglobal = __dirname + '/global.json'
-  , app = require('../lib/commands')()
+  , app = require('../lib/gitbin')()
   , assert = require('assert')
   , fs = require('fs')
   , testlib = require('./libtest')
@@ -61,8 +61,20 @@ function badfilecb(err, state) {
     assert.equal( err.message.slice(-45,-1)
                   , 'is not in the tracked file list for this bin'
                   , msg(fail) ) || t.print( msg(pass) )
+  
+    t.cleanup(process.cwd(), [flocal], function (err) {
+      if (err) throw err 
+      app.run('remove',[tfile2], notrackedfile)
+    })
+
+  
   }
   else assert.fail("Should have throw")
 }
 
-
+function notrackedfile(err, state) {
+  var msg = t.testmsg('<remove> prints appropriate error w/  missing local file')
+  assert.equal( (err.message.substring(0,33))
+                , 'Problem loading tracked file list'
+                ,  msg(fail) ) || t.print( msg(pass) )  
+}

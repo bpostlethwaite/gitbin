@@ -3,7 +3,7 @@
 //
 
 var fglobal = __dirname + '/global.json'
-  , app = require('../lib/commands')()
+  , app = require('../lib/gitbin')()
   , assert = require('assert')
   , fs = require('fs')
   , testlib = require('./libtest')
@@ -60,7 +60,7 @@ app.run('init','', function (err, state) {
       
       var msg = t.testmsg('<init> warns on pre-initialized directory')
       app.run('init','', function (err, state) {
-        assert.equal(err.message, 'This directory has already been initialized'
+        assert.equal(err.message.slice(-19), 'already initialized'
                      , msg(fail) ) || t.print( msg(pass) )
       })
     })
