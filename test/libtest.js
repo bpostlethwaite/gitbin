@@ -35,10 +35,10 @@ module.exports = function t () {
     return that 
   } 
   
-  function buildData (bina, binb)  {
+  function buildData (bina, binb, flag)  {
     var that = {} 
     that[bina] = true 
-    that[binb] = false 
+    that[binb] = (flag) ? true: false 
     return that 
   }
 
