@@ -2,30 +2,20 @@
 // ## Test Dependencies ##
 //
 
-var fglobal = __dirname + '/global.json'
-  , app = require('../lib/gitbin')()
+var app = require('../lib/gitbin')()
   , assert = require('assert')
-  , fs = require('fs')
   , testlib = require('./libtest')
   , t = testlib() 
 
-// Change this to proper config function
-app.fglobal = fglobal 
 
 //
 // Dummy Data
 //
-var testbina =  __dirname
-  , testbinb = __dirname + "/testbin_b"
-  , flocal = '.trackedfiles.json'
+var testbinA = __dirname + "/testbinA"
+  , testbinB = __dirname + "/testbinB"
   , tfile1 = __dirname + '/flop.dum'
   , tfile2 = __dirname + '/flip.dum'
 
-// Write dummy data to disk
-var dumglobal = t.buildData(testbina, testbinb)
-var dumlocal = t.buildData(tfile1,tfile2, true)
-fs.writeFileSync(fglobal, JSON.stringify(dumglobal, null, 4))
-fs.writeFileSync(flocal, JSON.stringify(dumlocal, null, 4)) 
 
 //
 // Aliases
@@ -36,11 +26,40 @@ var pass = true
 //
 // ## TESTS ##
 //
+////////////////////////////////////////////////////////////////////
+var State = {}
+State.bins = t.buildData(testbinA, testbinB)
+State.trackedfiles = t.buildData(tfile1,tfile2, true)
+app.setState(State)
 
-app.run('bin', '', function (err, data) {
-  assert.ifError(err)
-
-
+app.run('bin', '', function (err, state) {
+  msg = t.testmsg('<bin> command returns bin list with selected active bin')
+  assert.equal(err.usrmsg[0] ,'* testbinA', msg(fail) ) || t.print( msg(pass) )
+  assert.equal(err.usrmsg[1] ,'  testbinB', msg(fail) ) 
+////////////////////////////////////////////////////////////////////
+  app.run('bin', ['-r',__dirname] , function (err, state) {
+    msg = t.testmsg('<bin> command responds on malformed flag')
+    assert.equal( err.message, 'Unknown flag: -r'
+                  , msg(fail) ) || t.print( msg(pass) )
+////////////////////////////////////////////////////////////////////
+    app.run('bin', ['-d', 'badbin'], badBin_cb)
+  })
 })
 
-//  app.run('bin', ['-d','bina',
+function badBin_cb (err, state) {
+  msg = t.testmsg('<bin> -d responds with wrong bin name')
+  assert.equal( err.message.slice(-18), 'Bin not recognized'
+                , msg(fail) ) || t.print( msg(pass) )
+////////////////////////////////////////////////////////////////////
+  app.run('bin', ['-d', 'testbinB'], removeBin_cb )
+}
+
+function removeBin_cb (err, state) {
+  msg = t.testmsg('<bin> -d deletes appropriate bin')
+  assert.ok( state.bins.hasOwnProperty(testbinA) 
+             && !state.bins.hasOwnProperty(testbinB)
+             , msg(fail) ) || t.print( msg(pass) )
+}
+////////////////////////////////////////////////////////////////////
+  
+

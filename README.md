@@ -79,3 +79,5 @@ gitbin status
 - make it so users can not `add` files in a bin directory
 - `status` should check time stamps for useful info
 - make sure arguements go in as array
+- Use errors to propagate non-error messages to be printed to terminal. This would help test coverage on printed messages.
+- If active bin deleted either a) bump the active true to next bin, b) make sure in tests user is warned about checking out a bin.
