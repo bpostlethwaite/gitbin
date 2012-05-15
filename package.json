@@ -7,7 +7,7 @@
                     , "git"
                     , "CLI"
                     , "system tools"
-                    , "filesystem" 
+                    , "filesystem"
                     ],
   "author"        : "Postlethwaite",
   "contributors"  : [
@@ -19,7 +19,7 @@
   "main"          : "./lib/cli.js",
   "bin"           : { "gitbin": "./bin/gitbin" },
   "directories"   : { "test": "./test", "bin": "./bin", "lib": "./lib" },
-  "version"       : "0.0.4",
+  "version"       : "0.0.6",
   "scripts": {
     "test": "make test"
   },

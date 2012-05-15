@@ -5,7 +5,7 @@
 var app = require('../lib/gitbin')()
   , assert = require('assert')
   , testlib = require('./libtest')
-  , t = testlib() 
+  , t = testlib()
 
 
 //
@@ -13,14 +13,14 @@ var app = require('../lib/gitbin')()
 //
 var thisbin =  __dirname
   , testbinA = __dirname + "/testbinA"
-  , tfile1 = __dirname + '/flop.dum'
-  , tfile2 = __dirname + '/flip.dum'
+  , tfile1 = __dirname + '/foo.dum'
+  , tfile2 = __dirname + '/bar.dum'
 
 //
 // Aliases
 //
 var pass = true
-  , fail = false 
+  , fail = false
 
 //
 // ## TESTS ##
