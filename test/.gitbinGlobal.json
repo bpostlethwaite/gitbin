@@ -1,0 +1,4 @@
+{
+    "/path/to/bin": false,
+    "./testbinB": true
+}

@@ -5,7 +5,7 @@
 var app = require('../lib/gitbin')()
   , assert = require('assert')
   , testlib = require('./libtest')
-  , t = testlib() 
+  , t = testlib()
 
 
 //
@@ -21,7 +21,7 @@ var testbinA = __dirname + "/testbinA"
 // Aliases
 //
 var pass = true
-  , fail = false 
+  , fail = false
 
 //
 // ## TESTS ##
@@ -35,7 +35,7 @@ app.setState(State)
 app.run('bin', '', function (err, state) {
   msg = t.testmsg('<bin> command returns bin list with selected active bin')
   assert.equal(err.usrmsg[0] ,'* testbinA', msg(fail) ) || t.print( msg(pass) )
-  assert.equal(err.usrmsg[1] ,'  testbinB', msg(fail) ) 
+  assert.equal(err.usrmsg[1] ,'  testbinB', msg(fail) )
 ////////////////////////////////////////////////////////////////////
   app.run('bin', ['-r',__dirname] , function (err, state) {
     msg = t.testmsg('<bin> command responds on malformed flag')
@@ -56,10 +56,10 @@ function badBin_cb (err, state) {
 
 function removeBin_cb (err, state) {
   msg = t.testmsg('<bin> -d deletes appropriate bin')
-  assert.ok( state.bins.hasOwnProperty(testbinA) 
+  assert.ok( state.bins.hasOwnProperty(testbinA)
              && !state.bins.hasOwnProperty(testbinB)
              , msg(fail) ) || t.print( msg(pass) )
 }
 ////////////////////////////////////////////////////////////////////
-  
+
 

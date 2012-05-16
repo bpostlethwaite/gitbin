@@ -58,6 +58,6 @@ function badBin_cb (err, state) {
 }
 
 function noBins_cb (err, state) {
-  console.log(err)
+
 }
 
