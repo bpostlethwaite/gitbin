@@ -1,26 +1,38 @@
 {
-  "name"          : "gitbin"
-  , "description"   : "bin dotfiles and configs easily for use with git"
-  , "url"           : "https://github.com/Postlethwaite/gitbin"
-  , "keywords"      : [
-    "dotfiles"
-    , "git"
-    , "CLI"
-    , "system tools"
-    , "filesystem"
-  ]
-  , "author"        : "Postlethwaite"
-  , "contributors"  : [
-    {  "name" : "Postlethwaite"
-       , "email" : "post.ben.here@gmail.com" }
-  ]
-  , "dependencies" : {}
-  , "devDependencies": {}
-  , "bin"           : { "gitbin": "./bin/gitbin" }
-  , "directories"   : { "test": "./test", "bin": "./bin", "lib": "./lib" }
-  , "version"       : "0.1.1"
-  , "scripts": {
+  "name": "gitbin",
+  "description": "bin dotfiles and configs easily for use with git",
+  "keywords": [
+    "dotfiles",
+    "git",
+    "CLI",
+    "system tools",
+    "filesystem"
+  ],
+  "author": "Postlethwaite <post.ben.here@gmail.com> (https://github.com/Postlethwaite)",
+  "contributors": [
+    "Postlethwaite <post.ben.here@gmail.com>"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "bin": {
+    "gitbin": "./bin/gitbin"
+  },
+  "directories": {
+    "test": "./test",
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "version": "0.1.2",
+  "scripts": {
     "test": "make test"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "optionalDependencies": {},
+  "homepage": "https://github.com/Postlethwaite/gitbin",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Postlethwaite/gitbin.git"
   }
-  , "engines"       : {"node": ">=0.6.0"}
 }

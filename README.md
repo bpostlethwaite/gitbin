@@ -1,6 +1,6 @@
 # gitbin
 
-gitbin collects scattered dotfiles (or other files) into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality.
+**gitbin** collects scattered dotfiles, configuration files, documents or anything really into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality. Once a file is added, **gitbin** remembers where the file is and the `push` commands will re-copy the file on the filesystem into the designated **gitbin** folder.
 
 [![Build Status](https://secure.travis-ci.org/Postlethwaite/gitbin.png?branch=test)](http://travis-ci.org/Postlethwaite/gitbin)
 
@@ -14,7 +14,7 @@ Download file into a directory on your node path
 ## How to use
 
 ### Initialize a directory
-To begin using gitbin you must initialize a bin (directory) to be used as the local repository for your files. This adds the bin into the global gitbin register `.globalstate.json`
+To begin using **gitbin** you must initialize a bin (directory) to be used as the local repository for your files. This adds the bin into the global **gitbin** register `.globalstate.json`
 
 ```bash
 gitbin init
@@ -33,7 +33,7 @@ gitbin rm <file1> <file2> ...
 ```
 
 ### List bins
-*gitbin* allows usage of more than one bin. If you have initialized more than one bin (directory) you can list the bins gitbin is linked to (in the `.globalstate.json`) with:
+**gitbin** allows usage of more than one bin. If you have initialized more than one bin (directory) you can list the bins **gitbin** is linked to (in the `.globalstate.json`) with:
 ```bash
 gitbin bin
 ```
@@ -43,17 +43,17 @@ To remove a bin from being tracked by *gitbin* do:
 ```bash
 gitbin bin -d <bin>
 ```
-Deleting a bin will only remove it from the `.globalstate.json` file preventing *gitbin* from accessing this bin. The `.trackedfiles.json` is not unlinked from the directory so using the `init` command will both restore the bin and the files previously tracked. To seriously delete a bin, deleting it from *gitbin* statefiles and unlinking it via unix commands are necessary.
+Deleting a bin will only remove it from the `.globalstate.json` file preventing **gitbin** from accessing this bin. The `.trackedfiles.json` is not unlinked from the directory so using the `init` command will both restore the bin and the files previously tracked. To seriously delete a bin, deleting it from **gitbin** statefiles and unlinking it via unix commands are necessary.
 
 ### Checkout bin
-To change the _active_ bin which *gitbin* points to for it's other commands use:
+To change the _active_ bin which **gitbin** points to for it's other commands use:
 ```bash
 gitbin checkout <bin>
 ```
 where `<bin>` is the name of the bin as listed by the `node gitbin bin` command.
 
 ### Push changes to bin
-Once files have are being tracked by *gitbin* and changes to those files are made in the original file locations on the filesystem running the `push` command copies those files and replaces the files in the bin with the newer versions. *Git* can then be used to version and add to a repository.
+Once files have are being tracked by **gitbin** and changes to those files are made in the original file locations on the filesystem running the `push` command copies those files and replaces the files in the bin with the newer versions. **Git** can then be used to version and add to a repository.
 ```bash
 gitbin push
 ```
