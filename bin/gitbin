@@ -1,5 +1,5 @@
-//#!/usr/bin/env node
-/* 
+#!/usr/bin/env node
+/*
  * gitbin - collect dotfiles and configs easily for use with git
  *
  * Copyright (c) <2012> Ben Postlethwaite
