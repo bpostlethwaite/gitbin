@@ -58,7 +58,7 @@ function badpush_cb ( err ) {
     fs.readdir(testbinA, function (err, list) {
       if (err) throw new Error('Problem reading test directory')
       var msg = t.testmsg('<push> command deals with bad filepath successfully')
-      assert.ok( (list.indexOf('foo.dum') === 0 ), msg(fail) )
+      assert.ok( (list.indexOf('foo.dum') >= 0 ), msg(fail) )
       assert.ok( (list.indexOf('bar.dum') === -1 ), msg(fail) ) || t.print( msg(pass) )
       t.cleanup(testbinA, function (err) {
         if (err) throw err

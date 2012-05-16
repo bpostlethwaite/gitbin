@@ -47,10 +47,12 @@ module.exports = function t () {
     fs.readdir(dir, function (err, list) {
       if (err) return cb(err)
       list.forEach( function (foundfile) {
-        try {
-        fs.unlinkSync(dir + '/' +  foundfile)
-        } catch (e) {
-          cb(e)
+        if (foundfile[0] !== '.') {
+          try {
+            fs.unlinkSync(dir + '/' +  foundfile)
+          } catch (e) {
+            cb(e)
+          }
         }
       })
       cb(null)
