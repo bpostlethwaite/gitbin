@@ -2,7 +2,7 @@
 
 NOT FUNCTIONAL STILL IN DEVELOPMENT
 
-gitbin collects scattered dotfiles (or other files) into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality. 
+gitbin collects scattered dotfiles (or other files) into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality.
 
 [![Build Status](https://secure.travis-ci.org/Postlethwaite/gitbin.png?branch=test)](http://travis-ci.org/Postlethwaite/gitbin)
 
@@ -29,7 +29,7 @@ gitbin add <file1> <file2> ...
 ```
 
 ### Remove tracking from file
-To stop tracking a file, meaning the file will not be part of any `push` or `pull` commands use the `remove` command. Note that this will not actually delete the file from the bin directory. This should be done with the unix `rm` command. 
+To stop tracking a file, meaning the file will not be part of any `push` or `pull` commands use the `remove` command. Note that this will not actually delete the file from the bin directory. This should be done with the unix `rm` command.
 ```bash
 gitbin rm <file1> <file2> ...
 ```
@@ -62,13 +62,21 @@ gitbin push
 Note: as protection against accidentally pushing to the wrong bin, the push command will yeild a warning announcing the current bin the push will be performed on and waiting user input.
 
 ### Pull changes from bin to filesystem
+<font color="red">NOT FUNCTIONAL YET</font>
 This may or may not be implemented as it has the potential for grief. However, on a new machine it would be nice to pull from github then push to the filesystem. Perhaps file by file input regarding file replacement and path creation would mitigate potential information loss. An `-f` force switch could turn this caution feature off.
 ```bash
 gitbin pull
 ```
 
+### Fetch single file from bin into filessytem
+<font color="red">NOT FUNCTIONAL YET</font>
+This is the cautious route, or when certain files are specific to another machine and just the shared files are needed to be pulled from the bin to the local filesystem.
+```bash
+gitbin fetch <file1> <filen>
+```
+
 ### Check status
-This borrows that most handy git feature and lists all bins registered as well as marking the bin currently in use (the _active_ bin) and the files registered to that bin. 
+This borrows that most handy git feature and lists all bins registered as well as marking the bin currently in use (the _active_ bin) and the files registered to that bin.
 ```bash
 gitbin status
 ```
