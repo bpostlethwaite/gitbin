@@ -60,14 +60,16 @@ gitbin push
 Note: as protection against accidentally pushing to the wrong bin, the push command will yeild a warning announcing the current bin the push will be performed on and waiting user input.
 
 ### Pull changes from bin to filesystem
-<font color="red">NOT FUNCTIONAL YET</font>
+NON FUNCTIONAL
+
 This may or may not be implemented as it has the potential for grief. However, on a new machine it would be nice to pull from github then push to the filesystem. Perhaps file by file input regarding file replacement and path creation would mitigate potential information loss. An `-f` force switch could turn this caution feature off.
 ```bash
 gitbin pull
 ```
 
 ### Fetch single file from bin into filessytem
-<font color="red">NOT FUNCTIONAL YET</font>
+NON FUNCTIONAL
+
 This is the cautious route, or when certain files are specific to another machine and just the shared files are needed to be pulled from the bin to the local filesystem.
 ```bash
 gitbin fetch <file1> <filen>
