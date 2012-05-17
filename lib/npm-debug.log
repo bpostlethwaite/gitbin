@@ -1,0 +1,28 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/usr/bin/npm', 'publish' ]
+info using npm@1.1.21
+info using node@v0.6.17
+verbose config file /home/ben/.npmrc
+verbose config file /usr/etc/npmrc
+verbose config file /usr/lib/node_modules/npm/npmrc
+verbose publish [ '.' ]
+verbose cache add [ '.', null ]
+silly cache add: name, spec, args [ undefined, '.', [ '.', null ] ]
+verbose parsed url { pathname: '.', path: '.', href: '.' }
+ERR! Could not install: .
+ERR! Error: ENOENT, open 'package.json'
+ERR! You may report this log at:
+ERR!     <http://github.com/isaacs/npm/issues>
+ERR! or email it to:
+ERR!     <npm-@googlegroups.com>
+ERR! 
+ERR! System Linux 3.3.5-1-ARCH
+ERR! command "node" "/usr/bin/npm" "publish"
+ERR! cwd /home/ben/programming/node/gitbin/lib
+ERR! node -v v0.6.17
+ERR! npm -v 1.1.21
+ERR! path package.json
+ERR! code ENOENT
+ERR! message ENOENT, open 'package.json'
+ERR! errno {}
+verbose exit [ 1, true ]

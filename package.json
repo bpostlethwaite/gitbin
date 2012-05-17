@@ -8,7 +8,7 @@
     "system tools",
     "filesystem"
   ],
-  "author": "Postlethwaite <post.ben.here@gmail.com> (https://github.com/Postlethwaite)",
+  "author": "benjpost <post.ben.here@gmail.com> (https://github.com/benjpost)",
   "contributors": [
     "Postlethwaite <post.ben.here@gmail.com>"
   ],
@@ -22,7 +22,7 @@
     "bin": "./bin",
     "lib": "./lib"
   },
-  "version": "0.1.4",
+  "version": "0.1.6",
   "scripts": {
     "test": "make test"
   },
@@ -30,9 +30,9 @@
     "node": ">=0.6.0"
   },
   "optionalDependencies": {},
-  "homepage": "https://github.com/Postlethwaite/gitbin",
+  "homepage": "https://github.com/benjpost/gitbin",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Postlethwaite/gitbin.git"
+    "url": "git://github.com/benjpost/gitbin.git"
   }
 }
