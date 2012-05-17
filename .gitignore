@@ -1,3 +1,4 @@
-# Ignore directories
+# Ignore Files
 ####################
-node_modules/*
+cli.js
+.gitbinGlobal.json
