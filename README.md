@@ -9,7 +9,6 @@
 ```bash
 sudo npm install gitbin -g
 ```
-Download file into a directory on your node path
 
 ## How to use
 
