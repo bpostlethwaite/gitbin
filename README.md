@@ -7,7 +7,7 @@
 
 ## How to Install
 ```bash
-not yet installable from npm
+sudo npm install gitbin -g
 ```
 Download file into a directory on your node path
 
