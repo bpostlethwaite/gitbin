@@ -1,0 +1,181 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'nodejs', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.1.63
+3 info using node@v0.8.12
+4 verbose publish [ '.' ]
+5 verbose read json /home/bpostlet/programming/node/gitbin/package.json
+6 verbose cache add [ '.', null ]
+7 silly cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { pathname: '.', path: '.', href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/bpostlet/.npm/3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ '/home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/tmp.tgz
+14 verbose folder .
+15 info prepublish gitbin@0.1.4
+16 silly lockFile 53427287-3058-0-06036548316478729-tmp-tgz /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/tmp.tgz
+17 verbose lock /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/tmp.tgz /home/bpostlet/.npm/53427287-3058-0-06036548316478729-tmp-tgz.lock
+18 silly lockFile 53427287-3058-0-06036548316478729-tmp-tgz /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/tmp.tgz
+19 verbose tar unpack /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/tmp.tgz
+20 silly lockFile 57011a8a-3058-0-06036548316478729-package /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package
+21 verbose lock /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package /home/bpostlet/.npm/57011a8a-3058-0-06036548316478729-package.lock
+22 silly gunzTarPerm modes [ '755', '644' ]
+23 silly gunzTarPerm extractEntry package.json
+24 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+25 silly gunzTarPerm extractEntry .npmignore
+26 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+27 silly gunzTarPerm extractEntry README.md
+28 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+29 silly gunzTarPerm extractEntry Makefile
+30 silly gunzTarPerm modified mode [ 'Makefile', 436, 420 ]
+31 silly gunzTarPerm extractEntry lib/gitbin.js
+32 silly gunzTarPerm modified mode [ 'lib/gitbin.js', 436, 420 ]
+33 silly gunzTarPerm extractEntry lib/erf.js
+34 silly gunzTarPerm modified mode [ 'lib/erf.js', 436, 420 ]
+35 silly gunzTarPerm extractEntry lib/asyncs.js
+36 silly gunzTarPerm modified mode [ 'lib/asyncs.js', 436, 420 ]
+37 silly gunzTarPerm extractEntry lib/.trackedfiles.json
+38 silly gunzTarPerm modified mode [ 'lib/.trackedfiles.json', 436, 420 ]
+39 silly gunzTarPerm extractEntry test/test-gitbin.js
+40 silly gunzTarPerm modified mode [ 'test/test-gitbin.js', 436, 420 ]
+41 silly gunzTarPerm extractEntry test/test-push.js
+42 silly gunzTarPerm modified mode [ 'test/test-push.js', 436, 420 ]
+43 silly gunzTarPerm extractEntry test/test-status.js
+44 silly gunzTarPerm modified mode [ 'test/test-status.js', 436, 420 ]
+45 silly gunzTarPerm extractEntry test/test-bin.js
+46 silly gunzTarPerm modified mode [ 'test/test-bin.js', 436, 420 ]
+47 silly gunzTarPerm extractEntry test/test-add.js
+48 silly gunzTarPerm modified mode [ 'test/test-add.js', 436, 420 ]
+49 silly gunzTarPerm extractEntry test/test-init.js
+50 silly gunzTarPerm modified mode [ 'test/test-init.js', 436, 420 ]
+51 silly gunzTarPerm extractEntry test/test-remove.js
+52 silly gunzTarPerm modified mode [ 'test/test-remove.js', 436, 420 ]
+53 silly gunzTarPerm extractEntry test/TESTwriteState.js
+54 silly gunzTarPerm modified mode [ 'test/TESTwriteState.js', 436, 420 ]
+55 silly gunzTarPerm extractEntry test/TESTreadState.js
+56 silly gunzTarPerm modified mode [ 'test/TESTreadState.js', 436, 420 ]
+57 silly gunzTarPerm extractEntry test/test-checkout.js
+58 silly gunzTarPerm modified mode [ 'test/test-checkout.js', 436, 420 ]
+59 silly gunzTarPerm extractEntry test/libtest.js
+60 silly gunzTarPerm modified mode [ 'test/libtest.js', 436, 420 ]
+61 silly gunzTarPerm extractEntry test/foo.dum
+62 silly gunzTarPerm modified mode [ 'test/foo.dum', 436, 420 ]
+63 silly gunzTarPerm extractEntry test/testbinB/.gitbinLocal.json
+64 silly gunzTarPerm modified mode [ 'test/testbinB/.gitbinLocal.json', 436, 420 ]
+65 silly gunzTarPerm extractEntry test/testbinB/flip.dum
+66 silly gunzTarPerm modified mode [ 'test/testbinB/flip.dum', 436, 420 ]
+67 silly gunzTarPerm extractEntry test/testbinB/flop.dum
+68 silly gunzTarPerm modified mode [ 'test/testbinB/flop.dum', 436, 420 ]
+69 silly gunzTarPerm extractEntry test/testbinA/.keepDiralive
+70 silly gunzTarPerm modified mode [ 'test/testbinA/.keepDiralive', 436, 420 ]
+71 silly gunzTarPerm extractEntry test/bar.dum
+72 silly gunzTarPerm modified mode [ 'test/bar.dum', 436, 420 ]
+73 silly gunzTarPerm extractEntry license.txt
+74 silly gunzTarPerm modified mode [ 'license.txt', 436, 420 ]
+75 silly gunzTarPerm extractEntry bin/gitbin
+76 silly gunzTarPerm modified mode [ 'bin/gitbin', 436, 420 ]
+77 silly gunzTarPerm extractEntry .travis.yml
+78 silly gunzTarPerm modified mode [ '.travis.yml', 436, 420 ]
+79 verbose read json /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package/package.json
+80 silly lockFile 57011a8a-3058-0-06036548316478729-package /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package
+81 verbose from cache /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package/package.json
+82 verbose tar pack [ '/home/bpostlet/.npm/gitbin/0.1.4/package.tgz',
+82 verbose tar pack   '/home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package' ]
+83 verbose tarball /home/bpostlet/.npm/gitbin/0.1.4/package.tgz
+84 verbose folder /home/bpostlet/tmp/npm-12010/1351739693058-0.06036548316478729/package
+85 silly lockFile 14e04cb4-let-npm-gitbin-0-1-4-package-tgz /home/bpostlet/.npm/gitbin/0.1.4/package.tgz
+86 verbose lock /home/bpostlet/.npm/gitbin/0.1.4/package.tgz /home/bpostlet/.npm/14e04cb4-let-npm-gitbin-0-1-4-package-tgz.lock
+87 silly lockFile 14e04cb4-let-npm-gitbin-0-1-4-package-tgz /home/bpostlet/.npm/gitbin/0.1.4/package.tgz
+88 silly lockFile 9566cabd-postlet-npm-gitbin-0-1-4-package /home/bpostlet/.npm/gitbin/0.1.4/package
+89 verbose lock /home/bpostlet/.npm/gitbin/0.1.4/package /home/bpostlet/.npm/9566cabd-postlet-npm-gitbin-0-1-4-package.lock
+90 silly lockFile 9566cabd-postlet-npm-gitbin-0-1-4-package /home/bpostlet/.npm/gitbin/0.1.4/package
+91 verbose tar unpack /home/bpostlet/.npm/gitbin/0.1.4/package.tgz
+92 silly lockFile 9566cabd-postlet-npm-gitbin-0-1-4-package /home/bpostlet/.npm/gitbin/0.1.4/package
+93 verbose lock /home/bpostlet/.npm/gitbin/0.1.4/package /home/bpostlet/.npm/9566cabd-postlet-npm-gitbin-0-1-4-package.lock
+94 silly gunzTarPerm modes [ '755', '644' ]
+95 silly gunzTarPerm extractEntry package.json
+96 silly gunzTarPerm extractEntry .npmignore
+97 silly gunzTarPerm extractEntry README.md
+98 silly gunzTarPerm extractEntry Makefile
+99 silly gunzTarPerm extractEntry lib/gitbin.js
+100 silly gunzTarPerm extractEntry lib/erf.js
+101 silly gunzTarPerm extractEntry lib/asyncs.js
+102 silly gunzTarPerm extractEntry lib/.trackedfiles.json
+103 silly gunzTarPerm extractEntry test/test-gitbin.js
+104 silly gunzTarPerm extractEntry test/test-push.js
+105 silly gunzTarPerm extractEntry test/test-status.js
+106 silly gunzTarPerm extractEntry test/test-bin.js
+107 silly gunzTarPerm extractEntry test/test-add.js
+108 silly gunzTarPerm extractEntry test/test-init.js
+109 silly gunzTarPerm extractEntry test/test-remove.js
+110 silly gunzTarPerm extractEntry test/TESTwriteState.js
+111 silly gunzTarPerm extractEntry test/TESTreadState.js
+112 silly gunzTarPerm extractEntry test/test-checkout.js
+113 silly gunzTarPerm extractEntry test/libtest.js
+114 silly gunzTarPerm extractEntry test/foo.dum
+115 silly gunzTarPerm extractEntry test/testbinB/.gitbinLocal.json
+116 silly gunzTarPerm extractEntry test/testbinB/flip.dum
+117 silly gunzTarPerm extractEntry test/testbinB/flop.dum
+118 silly gunzTarPerm extractEntry test/testbinA/.keepDiralive
+119 silly gunzTarPerm extractEntry test/bar.dum
+120 silly gunzTarPerm extractEntry license.txt
+121 silly gunzTarPerm extractEntry bin/gitbin
+122 silly gunzTarPerm extractEntry .travis.yml
+123 verbose read json /home/bpostlet/.npm/gitbin/0.1.4/package/package.json
+124 silly lockFile 9566cabd-postlet-npm-gitbin-0-1-4-package /home/bpostlet/.npm/gitbin/0.1.4/package
+125 silly shasum updated bytes 11468
+126 info shasum 9b855b5e849a5f2be23f8b9b136d98938530864e
+126 info shasum /home/bpostlet/.npm/gitbin/0.1.4/package.tgz
+127 verbose from cache /home/bpostlet/.npm/gitbin/0.1.4/package/package.json
+128 verbose chmod /home/bpostlet/.npm/gitbin/0.1.4/package.tgz 644
+129 verbose chown /home/bpostlet/.npm/gitbin/0.1.4/package.tgz [ 1001, 1001 ]
+130 silly lockFile 3a52ce78- .
+131 silly publish { name: 'gitbin',
+131 silly publish   description: 'bin dotfiles and configs easily for use with git',
+131 silly publish   keywords: [ 'dotfiles', 'git', 'CLI', 'system tools', 'filesystem' ],
+131 silly publish   author:
+131 silly publish    { name: 'bpostlethwaite',
+131 silly publish      email: 'post.ben.here@gmail.com',
+131 silly publish      url: 'https://github.com/bpostlethwaite' },
+131 silly publish   contributors: [ { name: 'bpostlethwaite', email: 'post.ben.here@gmail.com' } ],
+131 silly publish   dependencies: {},
+131 silly publish   devDependencies: {},
+131 silly publish   bin: { gitbin: './bin/gitbin' },
+131 silly publish   directories: { test: 'test' },
+131 silly publish   version: '0.1.4',
+131 silly publish   scripts: { test: 'make test' },
+131 silly publish   optionalDependencies: {},
+131 silly publish   homepage: 'https://github.com/bpostlethwaite/gitbin',
+131 silly publish   repository:
+131 silly publish    { type: 'git',
+131 silly publish      url: 'git://github.com/bpostlethwaite/gitbin.git' },
+131 silly publish   main: 'lib/gitbin.js',
+131 silly publish   license: 'MIT',
+131 silly publish   readme: '# gitbin\n\n>> Not Fully Operational.\n\n**gitbin** collects scattered dotfiles, configuration files, documents or anything really into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality. Once a file is added, **gitbin** remembers where the file is and the `push` commands will re-copy the file on the filesystem into the designated **gitbin** folder.\n\n[![Build Status](https://secure.travis-ci.org/Postlethwaite/gitbin.png?branch=test)](http://travis-ci.org/Postlethwaite/gitbin)\n\n\n## How to Install\n```bash\nsudo npm install gitbin -g\n```\n\n## How to use\n\n### Initialize a directory\nTo begin using **gitbin** you must initialize a bin (directory) to be used as the local repository for your files. This adds the bin into the global **gitbin** register `.globalstate.json`\n\n```bash\ngitbin init\n```\n\n### Add file to bin and track file\nTo add a file to bin head to the directory containing the file and run `add` command. This both copies the file to the current bin as well as adding the file to the bin local registry `.trackedfiles.json`.\n```bash\ngitbin add <file1> <file2> ...\n```\n\n### Remove tracking from file\nTo stop tracking a file, meaning the file will not be part of any `push` or `pull` commands use the `remove` command. Note that this will not actually delete the file from the bin directory. This should be done with the unix `rm` command.\n```bash\ngitbin rm <file1> <file2> ...\n```\n\n### List bins\n**gitbin** allows usage of more than one bin. If you have initialized more than one bin (directory) you can list the bins **gitbin** is linked to (in the `.globalstate.json`) with:\n```bash\ngitbin bin\n```\n\n### Delete bin\nTo remove a bin from being tracked by *gitbin* do:\n```bash\ngitbin bin -d <bin>\n```\nDeleting a bin will only remove it from the `.globalstate.json` file preventing **gitbin** from accessing this bin. The `.trackedfiles.json` is not unlinked from the directory so using the `init` command will both restore the bin and the files previously tracked. To seriously delete a bin, deleting it from **gitbin** statefiles and unlinking it via unix commands are necessary.\n\n### Checkout bin\nTo change the _active_ bin which **gitbin** points to for it\'s other commands use:\n```bash\ngitbin checkout <bin>\n```\nwhere `<bin>` is the name of the bin as listed by the `node gitbin bin` command.\n\n### Push changes to bin\nOnce files have are being tracked by **gitbin** and changes to those files are made in the original file locations on the filesystem running the `push` command copies those files and replaces the files in the bin with the newer versions. **Git** can then be used to version and add to a repository.\n```bash\ngitbin push\n```\nNote: as protection against accidentally pushing to the wrong bin, the push command will yeild a warning announcing the current bin the push will be performed on and waiting user input.\n\n### Pull changes from bin to filesystem\nNON FUNCTIONAL\n\nThis may or may not be implemented as it has the potential for grief. However, on a new machine it would be nice to pull from github then push to the filesystem. Perhaps file by file input regarding file replacement and path creation would mitigate potential information loss. An `-f` force switch could turn this caution feature off.\n```bash\ngitbin pull\n```\n\n### Fetch single file from bin into filessytem\nNON FUNCTIONAL\n\nThis is the cautious route, or when certain files are specific to another machine and just the shared files are needed to be pulled from the bin to the local filesystem.\n```bash\ngitbin fetch <file1> <filen>\n```\n\n### Check status\nThis borrows that most handy git feature and lists all bins registered as well as marking the bin currently in use (the _active_ bin) and the files registered to that bin.\n```bash\ngitbin status\n```\n\n\n\n#### Stuff to do:\n- make it so users can not `add` files in a bin directory\n- `status` should check time stamps for useful info\n- make sure arguements go in as array\n- Use errors to propagate non-error messages to be printed to terminal. This would help test coverage on printed messages.\n- If active bin deleted either a) bump the active true to next bin, b) make sure in tests user is warned about checking out a bin.\n',
+131 silly publish   _id: 'gitbin@0.1.4',
+131 silly publish   dist: { shasum: '9b855b5e849a5f2be23f8b9b136d98938530864e' } }
+132 verbose url raw gitbin
+133 verbose url resolving [ 'https://registry.npmjs.org/', './gitbin' ]
+134 verbose url resolved https://registry.npmjs.org/gitbin
+135 info trying registry request attempt 1 at 20:14:53
+136 http PUT https://registry.npmjs.org/gitbin
+137 http 409 https://registry.npmjs.org/gitbin
+138 verbose url raw gitbin
+139 verbose url resolving [ 'https://registry.npmjs.org/', './gitbin' ]
+140 verbose url resolved https://registry.npmjs.org/gitbin
+141 info trying registry request attempt 1 at 20:14:53
+142 http GET https://registry.npmjs.org/gitbin
+143 http 200 https://registry.npmjs.org/gitbin
+144 error publish fail Cannot publish over existing version.
+144 error publish fail Bump the 'version' field, set the --force flag, or
+144 error publish fail     npm unpublish 'gitbin@0.1.4'
+144 error publish fail and try again
+145 error System Linux 3.2.0-32-generic
+146 error command "nodejs" "/usr/bin/npm" "publish"
+147 error cwd /home/bpostlet/programming/node/gitbin
+148 error node -v v0.8.12
+149 error npm -v 1.1.63
+150 error code EPUBLISHCONFLICT
+151 verbose exit [ 1, true ]
