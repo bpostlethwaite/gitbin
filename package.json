@@ -8,9 +8,9 @@
     "system tools",
     "filesystem"
   ],
-  "author": "Postlethwaite <post.ben.here@gmail.com> (https://github.com/Postlethwaite)",
+  "author": "bpostlethwaite <post.ben.here@gmail.com> (https://github.com/bpostlethwaite)",
   "contributors": [
-    "Postlethwaite <post.ben.here@gmail.com>"
+    "bpostlethwaite <post.ben.here@gmail.com>"
   ],
   "dependencies": {},
   "devDependencies": {},
@@ -18,21 +18,18 @@
     "gitbin": "./bin/gitbin"
   },
   "directories": {
-    "test": "./test",
-    "bin": "./bin",
-    "lib": "./lib"
+    "test": "test"
   },
   "version": "0.1.3",
   "scripts": {
     "test": "make test"
   },
-  "engines": {
-    "node": ">=0.6.0"
-  },
   "optionalDependencies": {},
-  "homepage": "https://github.com/Postlethwaite/gitbin",
+  "homepage": "https://github.com/bpostlethwaite/gitbin",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Postlethwaite/gitbin.git"
-  }
+    "url": "git://github.com/bpostlethwaite/gitbin.git"
+  },
+  "main": "lib/gitbin.js",
+  "license": "MIT"
 }
