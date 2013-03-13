@@ -1,5 +1,7 @@
 # gitbin
 
+>> Not Fully Operational.
+
 **gitbin** collects scattered dotfiles, configuration files, documents or anything really into a central directory for usage with git. It uses the same command-line syntax as git for ease of use and replicates much of the same basic functionality. Once a file is added, **gitbin** remembers where the file is and the `push` commands will re-copy the file on the filesystem into the designated **gitbin** folder.
 
 [![Build Status](https://secure.travis-ci.org/Postlethwaite/gitbin.png?branch=test)](http://travis-ci.org/Postlethwaite/gitbin)
@@ -7,9 +9,8 @@
 
 ## How to Install
 ```bash
-not yet installable from npm
+sudo npm install gitbin -g
 ```
-Download file into a directory on your node path
 
 ## How to use
 

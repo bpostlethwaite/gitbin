@@ -8,7 +8,7 @@
     "system tools",
     "filesystem"
   ],
-  "author": "Ben Postlethwaite <post.ben.here@gmail.com> (https://github.com/bpostlethwaite)",
+  "author": "bpostlethwaite <post.ben.here@gmail.com> (https://github.com/bpostlethwaite)",
   "contributors": [
     "bpostlethwaite <post.ben.here@gmail.com>"
   ],
@@ -18,11 +18,9 @@
     "gitbin": "./bin/gitbin"
   },
   "directories": {
-    "test": "./test",
-    "bin": "./bin",
-    "lib": "./lib"
+    "test": "test"
   },
-  "version": "0.1.8",
+  "version": "0.2.1",
   "scripts": {
     "test": "make test"
   },
@@ -34,5 +32,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/bpostlethwaite/gitbin.git"
-  }
+  },
+  "main": "lib/gitbin.js",
+  "license": "MIT"
 }
